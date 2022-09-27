@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5 container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <p class="fw-light h1">{{ blog.title }}</p>
+        <p class="lead text-muted">{{ blog.publication_date }}</p>
+        <p><img src="{{ blog.image.url }}" class="img-fluid" alt="{{ blog.title }}"></p>
+        <p>{{ blog.content|safe }}</p>
+        <a href="{% url 'blogs' %}" class="btn btn-light" role="button">Вернуться в блог</a>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

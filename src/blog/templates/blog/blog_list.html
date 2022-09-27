@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <p class="fw-light h1">Добро пожаловать в мой блог!</p>
+        <p class="lead text-muted">Здесь я пишу о важном и интересном. Иногда просто делаю заметки.
+            Возможно, вы найдете для себя что-нибудь полезное 😉</p>
+      </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            {% for blog in object_list %}
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                 src="{{ blog.image.url }}"
+                                 alt="{{ blog.title }}"/>
+
+                        <div class="card-body">
+                            <p class="card-text"><strong>{{ blog.title }}</strong></p>
+                            <p class="card-text text-muted">{{ blog.summary|safe }}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="{% url 'blog' blog.id %}" type="button" class="btn btn-sm btn-outline-secondary">Подробнее</a>
+                                </div>
+                                <p><small class="text-muted">{{ blog.publication_date }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
