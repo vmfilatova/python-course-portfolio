@@ -28,21 +28,21 @@ git clone https://github.com/mnv/python-course-portfolio.git
 
 2. Build the container using Docker Compose:
     ```shell
-    docker-compose build
+    docker compose build
     ```
     This command should be run from the root directory where `Dockerfile` is located.
     You also need to build the docker container again in case if you have updated `requirements.txt`.
    
 3. Now it is possible to run the project inside the Docker container:
     ```shell
-    docker-compose up
+    docker compose up
     ```
    When containers are up server starts at [http://0.0.0.0:8000](http://0.0.0.0:8000). You can open it in your browser.
 
 4. To run application correctly set up the database using commands:
     Connect to the application Docker-container:
     ```shell
-    docker-compose exec app bash
+    docker compose exec app bash
     ```
    Apply migrations to create tables in the database:
     ```shell
@@ -54,7 +54,7 @@ git clone https://github.com/mnv/python-course-portfolio.git
 1. To manage your new portfolio website you need to add superuser.
     Connect to the application Docker-container (if you are outside the container):
     ```shell
-    docker-compose exec app bash
+    docker compose exec app bash
     ```
    Create superuser:
     ```shell

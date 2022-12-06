@@ -58,14 +58,14 @@
 3. Соберите Docker-контейнер с помощью Docker Compose:
     .. code-block:: console
 
-        docker-compose build
+        docker compose build
 
     Данную команду необходимо выполнять повторно в случае обновления зависимостей в файле `requirements.txt`.
 
 4. После сборки контейнеров можно их запустить командой:
     .. code-block:: console
 
-        docker-compose up
+        docker compose up
 
     Данная команда запустит собранные контейнеры для приложения и базы данных.
     Когда запуск завершится, сервер начнет работать по адресу `http://0.0.0.0:8000`.
@@ -76,7 +76,7 @@
 
     .. code-block:: console
 
-        docker-compose exec app bash
+        docker compose exec app bash
 
     Для применения миграций выполните команду:
 
@@ -95,7 +95,7 @@
 
     .. code-block:: console
 
-        docker-compose exec app bash
+        docker compose exec app bash
 
     Выполните команду для создания администратора:
 
@@ -117,7 +117,7 @@
 
     .. code-block:: console
 
-        docker-compose exec app bash
+        docker compose exec app bash
 
 Для генерации миграций:
 
@@ -154,7 +154,7 @@
 
 .. code-block:: console
 
-    docker-compose run app python manage.py test
+    docker compose run app python manage.py test
 
 Также существует аналогичная `make`-команда:
 
