@@ -25,7 +25,7 @@ class BlogTestCase(TestCase):
             publication_date=datetime(2022, 12, 20, tzinfo=timezone.utc),
         )
 
-    def test_animals_can_speak(self) -> None:
+    def test_blog_messages_creation(self) -> None:
         """
         Тестирование моделей сообщений для блога.
 
