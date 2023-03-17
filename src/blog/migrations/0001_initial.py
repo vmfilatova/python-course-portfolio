@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 ("title", models.CharField(max_length=255, verbose_name="Заголовок")),
-                ("content", models.TextField(verbose_name="Содержимое сообщения")),
+                ("content", models.TextField(default=0,verbose_name="Содержимое сообщения")),
                 (
                     "image",
                     models.ImageField(upload_to="images/", verbose_name="Изображение"),

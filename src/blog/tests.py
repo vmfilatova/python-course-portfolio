@@ -20,9 +20,9 @@ class BlogTestCase(TestCase):
 
         Blog.objects.create(
             title="Blog №1 title",
-            content="Blog №1 content. " * 100,
-            image="Blog №1 image path",
-            publication_date=datetime(2022, 12, 20, tzinfo=timezone.utc),
+            content="Blog №1 content. " * 5,
+            image="images/horseshoe_94961.png",
+            publication_date=datetime(2023, 3, 16, tzinfo=timezone.utc),
         )
 
     def test_blog_messages_creation(self) -> None:
@@ -34,7 +34,7 @@ class BlogTestCase(TestCase):
 
         blog = Blog.objects.get(title="Blog №1 title")
 
-        content = "Blog №1 content. " * 100
+        content = "Blog №1 content. " * 5
         self.assertEqual(blog.summary(), content[:100] + "...")
-        self.assertEqual(blog.publication_date_format(), "Dec 20 2022")
+        self.assertEqual(blog.publication_date_format(), "Mar 16 2023")
         self.assertEqual(str(blog), f'Объект "Сообщение блога" (id={blog.pk})')

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-5 container">
+    <div class="row py-lg-5">
+        <h4 class="">Данные о пользователе</h4>
+        {% for person in person_list %}
+          <ul class="list-unstyled">
+            <li><a href="{{ person.resume }}" class="">Резюме</a></li>
+            <li><a href="{{ person.github }}" target="_blank" class="">GitHub</a></li>
+            <li><a href="mailto:{{ person.email }}" class="">{{ person.email }}</a></li>
+          </ul>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # созданные приложения
     "jobs.apps.JobsConfig",
     "blog.apps.BlogConfig",
+    "person.apps.PersonConfig",
     # установленные приложения
     "ckeditor",
     "ckeditor_uploader",

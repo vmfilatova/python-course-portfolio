@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block header %}
+            {% for pers in object_list %}
+                <li><a href="{{ pers.resume }}" class="text-white">Резюме</a></li>
+                <li><a href="{{ pers.github }}" target="_blank" class="text-white">GitHub</a></li>
+                <li><a href="mailto:{{ pers.email }}" class="text-white">{{ pers.email }}</a></li>
+            {% endfor %}
+{% endblock header%}

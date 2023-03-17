@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Job",
+            name="Person",
             fields=[
                 (
                     "id",
@@ -36,26 +36,34 @@ class Migration(migrations.Migration):
                     ),
                 ),
                 (
-                    "image",
-                    models.ImageField(
-                        help_text="Изображение для демонстрации работы",
-                        upload_to="images/",
-                        verbose_name="Изображение",
+                    "resume",
+                    models.CharField(
+                        help_text="Резюме",
+                        max_length=255,
+                        verbose_name="Резюме",
                     ),
                 ),
                 (
-                    "description",
+                    "github",
                     models.CharField(
-                        help_text="Краткое описание выполненной работы",
+                        help_text="GitHub",
                         max_length=255,
-                        verbose_name="Описание",
+                        verbose_name="GitHub",
+                    ),
+                ),
+                (
+                    "email",
+                    models.CharField(
+                        help_text="Электронная почта",
+                        max_length=255,
+                        verbose_name="Электронная почта",
                     ),
                 ),
 
             ],
             options={
-                "verbose_name": "Выполненная работа",
-                "verbose_name_plural": "Выполненные работы",
+                "verbose_name": "Информация о пользователе",
+                "verbose_name_plural": "Информация о пользователе",
             },
         ),
     ]
